@@ -1,0 +1,12 @@
+{% extends 'm_mg/base.html' %}
+{% block conteudo %}
+    <h2>Minhas contas</h2>
+    <p>Adicionar <a href="{% url 'nova_conta' %}">nova conta</a></p>
+    <ul>
+        {% for conta in contas %}
+            <li><a href="{% url 'conta' conta.id %}">{{ conta.conta }}</a></li>
+        {% empty %}
+            <p>Sem nenhuma conta criada no momento</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
