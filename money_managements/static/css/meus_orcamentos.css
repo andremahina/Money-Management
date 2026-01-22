@@ -1,0 +1,70 @@
+.meus_orcamentos {
+    padding: 20px 4rem;
+    display: grid;
+}
+.meus_orcamentos .contas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+.meus_orcamentos .conta, .add_ {
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(61, 61, 61, 0.527);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+.add_ {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    font: 600 18px Andre;
+}
+.add_ a {
+    text-decoration: none;
+     color: #858585;
+    font: bolder 8em Andre;
+    padding: 10px 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(126, 126, 126, 0.39);
+    transition: all ease-in-out 0.3s;
+}
+.add_ a:hover {
+    transform: scale(1.1);
+     color: #000000;
+}
+.conta .conta_nome {
+    border-radius: 10px;
+    height: 60%;
+    background-color: #3daf3d;
+    display: grid;
+    place-items: center;
+    font: bolder 1.4em Andre;
+    color: aliceblue;
+}
+.conta .detalhes {
+    height: 40%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detalhes a {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(119, 118, 118);
+    box-shadow: 0px 0px 2px rgb(209, 209, 209);
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+}
+.detalhes p {
+    color: aquamarine;
+}
+.detalhes a:hover {
+    background-color: rgba(0, 0, 0, 0.39);
+    color: aliceblue;
+}

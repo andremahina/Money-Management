@@ -7,4 +7,6 @@ urlpatterns = [
     path('contas/', views.contas, name='contas'),
     path('contas/nova_conta', views.nova_conta, name='nova_conta'),
     path('contas/<int:conta_id>/', views.conta, name='conta'),
+    path('conta/movimento/<int:conta_id>', views.movimento, name='movimento'),
+    path('conta/listar_movimentos/<int:conta_id>', views.listar_movimentos, name='listar_movimentos'),
 ]

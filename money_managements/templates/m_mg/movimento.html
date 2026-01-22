@@ -1,0 +1,21 @@
+{% extends 'm_mg/base.html' %}
+{% block conteudo %}
+    <main class="orcamento">
+        <div class="form">
+            <h2>Movimento</h2>
+            <form action="{% url 'movimento' conta.id %}" method="post">
+                 {% csrf_token %}
+                <label for="valor_id">Valor a movimentar</label>
+                    <input type="number" name="valor" id="valor_id" placeholder="valor a movimentar" required>
+                <label for="descricao_id">Tipo de movimento</label>
+                    <select name="tipo" id="tipo_movimento">
+                        <option value="DEPOSITO">Deposito</option>
+                        <option value="LEVANTAMENTO">Levantamento</option>
+                    </select>
+                <label for="descricao_id">Descricao</label>
+                    <input type="text" name="descricao" maxlength="50" id="descricao_id" placeholder="descricao breve...">
+                <button>Realizar movimento</button>
+            </form>
+        </div>
+    </main>
+{% endblock %}

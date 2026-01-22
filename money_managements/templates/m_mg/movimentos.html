@@ -1,7 +1,7 @@
 {% extends 'm_mg/base.html' %}
 {% block conteudo %}
     <main class="index">
-        <h1>Movimentos recentes</h1>
+        <h1>Todos os movimentos</h1>
         <section class="section-listagem">
             <div class="tabela-container">
                 <div class="container-2">
@@ -27,9 +27,7 @@
                                     <td>{{ movimento.descricao }}</td>
                                 </tr>
                             {% empty %}
-                               <th>
-                                    <td>Sem movimentos </td>
-                               </th>
+                                <p>Nenhum movimento realizado </p>
                             {% endfor %}
                         </tbody>
                     </table>

@@ -1,13 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money Management</title>
+    <title>Money Managements</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meus_orcamentos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/minha_conta.css' %}">
+    <link rel="stylesheet" href="{% static 'css/orcamento.css' %}">
 </head>
 <body>
-    <a href="{% url 'home' %}">Money Management</a>
-    <p>Visualizar <a href="{% url 'contas' %}">contas</a></p>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}">Money Managements</a>
+        </div>
+        <nav>
+            <a href="{% url 'contas' %}" id="cta1">Minhas contas</a>
+            <span>Saldo Total: {{ saldo_geral }}</span>
+        </nav>
+    </header>
     {% block conteudo %}{% endblock %}
+    <footer>
+
+    </footer>
 </body>
 </html>

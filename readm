@@ -4,7 +4,9 @@ o usuario tem a capacidade de adicionar valores ou retirar em um conta especific
 
 
 # funcionalidades 
- - Criar conta 
+- Criar conta 
 - Levantamento
 - Deposito
 - Registro 
+- Movimentos da conta
+    Movimento de uma conta em particular e movimentacao geral da conta

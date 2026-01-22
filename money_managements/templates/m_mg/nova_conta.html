@@ -1,13 +1,18 @@
 {% extends 'm_mg/base.html' %}
 {% block conteudo %}
-    <form action="{% url 'nova_conta' %}" method="post">
-        {% csrf_token %}
-        <label for="conta_id">nome da conta</label>
-        <input type="text" name="conta" maxlength="100" required id="conta_id">
-        <label for="descricao_id">descricao</label>
-        <input type="text"  name="descricao" maxlength="500" id="descricao_id">
-        <label for="saldo_id">saldo</label>
-        <input type="number" name="saldo" id="saldo_id" value="0">
-        <button>registrar nova conta</button>
-    </form>
+    <main class="orcamento">
+        <div class="form">
+            <h2>Nova Conta</h2>
+            <form action="{% url 'nova_conta' %}" method="post">
+                {% csrf_token %}
+                <label for="conta_id">Nome da conta</label>
+                    <input type="text" name="conta" maxlength="100" required id="conta_id" placeholder="nome da conta">
+                <label for="descricao_id">Descricao</label>
+                    <input type="text"  name="descricao" maxlength="500" id="descricao_id" placeholder="Uma descricao detalha acerca do orcamento">
+                <label for="saldo_id">Saldo</label>
+                    <input type="number" name="saldo" id="saldo_id" value="0">
+                <button>Registrar nova conta</button>
+            </form>
+        </div>
+    </main>
 {% endblock %}

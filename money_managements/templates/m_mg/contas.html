@@ -1,12 +1,24 @@
 {% extends 'm_mg/base.html' %}
 {% block conteudo %}
-    <h2>Minhas contas</h2>
-    <p>Adicionar <a href="{% url 'nova_conta' %}">nova conta</a></p>
-    <ul>
-        {% for conta in contas %}
-            <li><a href="{% url 'conta' conta.id %}">{{ conta.conta }}</a></li>
-        {% empty %}
-            <p>Sem nenhuma conta criada no momento</p>
-        {% endfor %}
-    </ul>
+    <main class="meus_orcamentos">
+        <h1>Minhas contas</h1>
+        <div class="contas">
+            <div class="add_">
+                <a href="{% url 'nova_conta' %}">+</a>
+                <div class="conta_nome"><span>adicionar conta</span></div>
+            
+            </div>
+            {% for conta in contas %}
+                <div class="conta">
+                    <div class="conta_nome"><span>{{ conta.conta  }}</span></div>
+                    <div class="detalhes">
+                        <span>saldo {{ conta.saldo }}KZ</span>
+                        <a href="{% url 'conta' conta.id %}">ver mais</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Sem nenhuma conta criada no momento</p>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}

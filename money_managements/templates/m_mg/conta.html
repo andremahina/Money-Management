@@ -1,7 +1,53 @@
 {% extends 'm_mg/base.html'%}
 {% block conteudo %}
-    <h2>{{ conta }}</h2>
-    <p>Saldo de conta {{ conta.saldo }} KZ</p>
-    <p>Realizar <a href="#">deposito agora</a></p>
-    <p>Realizar <a href="#">levantamento</a></p>
+    <main class="minha_conta">
+        <h3><a href="{% url 'contas' %}">Minhas Contas ></a>
+           <a href="{% url 'conta' conta.id %}">{{ conta }}</a>
+        </h3>
+        <h1>{{ conta }}</h1>
+        <h2>Detalhes da conta</h2>
+        <div class="content">
+            <div class="links">
+                <span>Saldo de conta: {{ conta.saldo }}KZ</span>
+                <div class="links-2">
+                    <a href="{% url 'movimento' conta.id %}">Novo movimento</a>
+                    <a href="{% url 'listar_movimentos' conta.id %}">Exibir todos movimentos</a>
+                </div>
+            </div>
+            <P>{{ conta.descricao }}</P>
+        </div>
+        <h2>Movimentos recentes da conta</h2>
+        <section class="section-listagem">
+            <div class="tabela-container">
+                <div class="container-2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID do Movimento</th>
+                                <th>Conta</th>
+                                <th>Tipo de Movimento</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th>Descricao</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for movimento in movimentos %}
+                                <tr>
+                                    <td>{{ movimento.id }}</td>
+                                    <td>{{ movimento.conta }}</td>
+                                    <td>{{ movimento.tipo }}</td>
+                                    <td>{{ movimento.valor }}</td>
+                                    <td>{{ movimento.data|date:'d/m/Y | H:i'}}</td>
+                                    <td>{{ movimento.descricao }}</td>
+                                </tr>
+                            {% empty %}
+                                <p>Nenhum movimento realizado </p>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

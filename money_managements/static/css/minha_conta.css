@@ -1,0 +1,40 @@
+.minha_conta {
+    padding: 20px 4rem;
+    display: grid;
+    gap: 10px;
+}
+.minha_conta .links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 10;
+    color:  #10c33f;
+    justify-content: space-between;
+    font: bolder 16px Andre;
+}
+.links-2 {
+    display: flex;
+    gap: 10px;
+}
+.content {
+    padding: 10px;
+}
+.links a {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    padding: 10px;
+    background-color: rgb(253, 254, 255);
+    border-radius: 4px;
+    transition: all ease-in-out 0.3s;
+}
+.links a:hover {
+    transform: scale(1.07);
+    background-color: #10c33f;
+    color: aliceblue;
+}
+.minha_conta p {
+    text-align: justify;
+    margin-top: 20px;
+}
