@@ -7,7 +7,7 @@ from .models import Conta, Movimento
 
 # Create your views here.
 def index(request):
-    movimentos = Movimento.objects.all().order_by('data')
+    movimentos = Movimento.objects.all().order_by('-data')
     dados = {'movimentos' : movimentos[:10]}
     return render(request, 'm_mg/index.html', dados)
 
@@ -18,7 +18,7 @@ def contas(request):
 
 def conta(request, conta_id):
     conta = Conta.objects.get(id=conta_id)
-    movimentos = conta.movimentos.all().order_by('data')
+    movimentos = conta.movimentos.all().order_by('-data')[:10]
     dados = { 'conta' : conta, 'movimentos' : movimentos[:10] }
     return render(request, 'm_mg/conta.html', dados)
 
